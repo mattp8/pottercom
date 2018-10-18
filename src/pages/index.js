@@ -5,6 +5,7 @@ import { Image, Flex, Text, Card, Button } from 'rebass';
 import Layout from '../components/Layout';
 
 import Mascot from '../assets/images/mascot.png';
+import BoltSVG from '../assets/images/bolt';
 
 class IndexPage extends Component {
   constructor() {
@@ -79,6 +80,7 @@ class IndexPage extends Component {
                     value={color}
                     onChange={this.handleChange}
                   />
+                  <BoltSVG fill={color} />
                 </Flex>
                 <Button
                   bg="grey"
