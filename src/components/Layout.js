@@ -7,6 +7,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { Container } from '../modules/layout';
 import Header from './Header';
+import Footer from './Footer';
 import theme from '../theme';
 import Pottercom from '../assets/images/pottercom.svg';
 
@@ -15,7 +16,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     text-size-adjust: 100%;
     background-color: ${props => props.theme.colors.darkBlack};
-    font-family: fontFamily: '"Avenir Next", Helevetica, Arial, sans-serif',
+   font-family: "Avenir Next", Helevetica, Arial, sans-serif;
+   box-sizing: border-box;
+
+  }
+
+  div {
+    box-sizing: border-box;
 
   }
 `;
@@ -54,6 +61,9 @@ const Layout = ({ children }) => (
               {children}
             </Box>
           </Container>
+        </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <Footer />
         </ThemeProvider>
       </>
     )}

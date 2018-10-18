@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Box, Image, Text } from 'rebass';
+import { Image, Text } from 'rebass';
 
-const Header = ({ logo, ...props }) => (
+const Header = ({ logo }) => (
   <div>
     <Image src={logo} width="200px" alt="pottercom" mt={4} />
     <Text
-      color="black"
+      color="lightBlack"
       fontWeight="500"
       fontSize={0}
       css={{ position: 'relative', left: '12px', top: '-12px' }}

@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Image, Flex, Text, Card, Button } from 'rebass';
+import styled, { keyframes } from 'styled-components';
+import Clipboard from 'react-clipboard.js';
+import Fade from 'react-reveal/Fade';
+
+import { Flex, Text, Card } from 'rebass';
 
 import Layout from '../components/Layout';
 
-import Mascot from '../assets/images/mascot.png';
+import MascotSrc from '../assets/images/mascot.png';
 import BoltSVG from '../assets/images/bolt';
 
 class IndexPage extends Component {
   constructor() {
     super();
-    this.state = { color: '#000000' };
+    this.state = {
+      color: '#000000',
+      buttonText: 'Copy',
+    };
 
     this.handleChange = this.handleChange.bind(this);
+    this.onCopySuccess = this.onCopySuccess.bind(this);
+  }
+
+  onCopySuccess() {
+    this.setState({ buttonText: 'Copied' });
+    setTimeout(() => {
+      this.setState({ buttonText: 'Copy' });
+    }, 2000);
   }
 
   handleChange(e) {
@@ -23,17 +37,15 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { color } = this.state;
+    const { color, buttonText } = this.state;
+    const code = `var potterconfig = { color:${color};}
+    <script src=“stackpath.finimize.com/pottercom”  defer=“true”  />`;
+
     return (
       <Layout>
         <Flex justifyContent="center" mt={5}>
           <Flex width={[1 / 2]} justifyContent="center">
-            <Image
-              src={Mascot}
-              height="100%"
-              width="350px"
-              alt="Pottercom wizard"
-            />
+            <Mascot src={MascotSrc} alt="Pottercom wizard" />
           </Flex>
           <Flex
             width={[1 / 2]}
@@ -41,59 +53,58 @@ class IndexPage extends Component {
             flexDirection="column"
             alignItems="flex-start"
           >
-            <Flex
-              justifyContent="center"
-              alignItems="center"
-              p={3}
-              bg="offWhite"
-              css={{ borderRadius: '6px', height: 'auto' }}
-            >
-              <Text color="black" textAlign="left">
-                Hey there. Stuck for costume ideas? Just paste the little
-                snippet of code below, after your Intercom code and watch the
-                magic happen.{' '}
-              </Text>
-            </Flex>
+            <Fade bottom cascade>
+              <ChatBubble>
+                <Text color="black" textAlign="left">
+                  Hey there. Stuck for costume ideas? Just paste the little
+                  snippet of code below, after your Intercom code and watch the
+                  magic happen.{' '}
+                </Text>
+              </ChatBubble>
 
-            <Flex
-              alignItems="center"
-              flexDirection="column"
-              mt={3}
-              p={3}
-              bg="offWhite"
-              css={{ borderRadius: '6px', height: 'auto' }}
-            >
-              <Card
-                css={{ textAlign: 'left' }}
-                variant="lightGrey"
-                borderRadius="4px!important"
+              <Flex
+                alignItems="center"
+                flexDirection="column"
+                mt={3}
                 p={3}
+                bg="offWhite"
+                width="100%"
+                css={{
+                  borderRadius: '6px',
+                  height: 'auto',
+                  maxWidth: '350px',
+                  boxSizing: 'border-box',
+                }}
               >
-                <Code>{`var potterconfig = { color:#000000;}
-                  <script src=“stackpath.finimize.com/pottercom”  defer=“true”  />`}</Code>
-              </Card>
-
-              <Flex width={[1]} mt={3}>
-                <Flex bg="grey" css={{ flex: 1, borderRadius: '4px' }}>
-                  <Input
-                    name="color"
-                    value={color}
-                    onChange={this.handleChange}
-                  />
-                  <BoltSVG fill={color} />
-                </Flex>
-                <Button
-                  bg="grey"
-                  fontWeight="500"
-                  borderRadius="4px"
-                  px={4}
-                  color="lightBlack"
-                  ml={3}
+                <Card
+                  css={{ textAlign: 'left' }}
+                  variant="lightGrey"
+                  borderRadius="4px!important"
+                  p={3}
+                  width="100%"
                 >
-                  Copy
-                </Button>
+                  <Code>{code}</Code>
+                </Card>
+
+                <Flex width={[1]} mt={3}>
+                  <CopyInput>
+                    <Input
+                      name="color"
+                      value={color}
+                      onChange={this.handleChange}
+                    />
+                    <BoltSVG fill={color} />
+                  </CopyInput>
+                  <Clipboard
+                    data-clipboard-text={code}
+                    onSuccess={this.onCopySuccess}
+                    component={Copy}
+                  >
+                    {buttonText}
+                  </Clipboard>
+                </Flex>
               </Flex>
-            </Flex>
+            </Fade>
           </Flex>
         </Flex>
       </Layout>
@@ -103,22 +114,108 @@ class IndexPage extends Component {
 
 export default IndexPage;
 
+const float = keyframes`
+	0% {
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));		transform: translatey(0px);
+	}
+	60% {
+    filter: drop-shadow(0 5px 30px rgba(0,0,0,0.3))	;	transform: translatey(-20px);
+	}
+	100% {
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));		transform: translatey(0px);
+  }`;
+
+const Mascot = styled.img`
+  width: 350px;
+  height: 100%;
+  animation: ${float} 6s infinite ease-in-out;
+`;
+const ChatBubble = styled.div`
+  color: ${props => props.theme.colors.black};
+  display: flex;
+  max-width: 100%;
+  alignitems: center;
+  padding: ${props => `${props.theme.space[3]}px`};
+  background: ${props => props.theme.colors.offWhite};
+  border-radius: 6px;
+  height: auto;
+  max-width: 350px;
+  position: relative;
+
+  ::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent
+      ${props => props.theme.colors.offWhite} transparent;
+
+    margin-left: -10px;
+    z-index: -1;
+  }
+`;
+
 const Code = styled.code`
   text-align: left;
   font-size: 1em;
   font-family: ${props => props.theme.font.family.default};
   color: ${props => props.theme.colors.lightBlack};
+  max-width: 60%;
+  word-break: break-word;
+  width: 100%;
+`;
+
+const CopyInput = styled.div`
+  display: flex;
+  flex: 1;
+  align-item: center;
+  padding: ${props => `${props.theme.space[3]}px`};
+  background: ${props => props.theme.colors.grey};
+  border-radius: 4px;
 `;
 
 const Input = styled.input`
   background: transparent;
   color: ${props => props.theme.colors.lightBlack};
   border-radius: 6px;
-  padding: 16px;
+  padding: 0px;
   box-shadow: none;
   border: none;
   display: flex;
   flex-grow: 1;
   font-size: 1em;
   outline: none;
+  transition: 200ms ease;
+
+  :focus {
+    ${CopyInput} {
+      background: ${props => props.theme.colors.greyHover};
+    }
+  }
+`;
+
+const Copy = styled.button`
+  background: ${props => props.theme.colors.grey};
+  font-size: 1em;
+  font-weight: 500;
+  border-radius: 4px;
+  margin-left: ${props => `${props.theme.space[3]}px`};
+  padding: 0 ${props => `${props.theme.space[3]}px`};
+  border: 0;
+  cursor: pointer;
+  transition: 200ms ease;
+
+  :hover {
+    background: ${props => props.theme.colors.greyHover};
+  }
+
+  :focus,
+  active {
+    outline: none;
+    border: none;
+  }
 `;
