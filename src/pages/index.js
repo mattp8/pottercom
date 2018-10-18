@@ -86,7 +86,7 @@ class IndexPage extends Component {
                   <Code>{code}</Code>
                 </Card>
 
-                <Flex width={[1]} mt={3}>
+                <Flex width={[1]} mt={3} flexDirection={['column', 'row']}>
                   <CopyInput>
                     <Input
                       name="color"
@@ -113,6 +113,12 @@ class IndexPage extends Component {
 }
 
 export default IndexPage;
+
+// const CollapseBox = styled(Flex)({
+//   @media all and (max-width: 600px) {
+//     flex-direction: column;
+//   }
+// });
 
 const float = keyframes`
 	0% {
@@ -176,6 +182,12 @@ const CopyInput = styled.div`
   padding: ${props => `${props.theme.space[3]}px`};
   background: ${props => props.theme.colors.grey};
   border-radius: 4px;
+  width: 100%;
+  margin-right: 16px;
+
+  @media (max-width: 640px) {
+    margin-bottom: 8px;
+  }
 `;
 
 const Input = styled.input`
@@ -190,12 +202,7 @@ const Input = styled.input`
   font-size: 1em;
   outline: none;
   transition: 200ms ease;
-
-  :focus {
-    ${CopyInput} {
-      background: ${props => props.theme.colors.greyHover};
-    }
-  }
+  width: 100%;
 `;
 
 const Copy = styled.button`
@@ -203,8 +210,7 @@ const Copy = styled.button`
   font-size: 1em;
   font-weight: 500;
   border-radius: 4px;
-  margin-left: ${props => `${props.theme.space[3]}px`};
-  padding: 0 ${props => `${props.theme.space[3]}px`};
+  padding: ${props => `${props.theme.space[3]}px`};
   border: 0;
   cursor: pointer;
   transition: 200ms ease;
