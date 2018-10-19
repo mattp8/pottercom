@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import Clipboard from 'react-clipboard.js';
 import Fade from 'react-reveal/Fade';
 
@@ -99,6 +99,7 @@ class IndexPage extends Component {
                     data-clipboard-text={code}
                     onSuccess={this.onCopySuccess}
                     component={Copy}
+                    className="copyButton"
                   >
                     {buttonText}
                   </Clipboard>
@@ -205,7 +206,9 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const Copy = styled.button`
+const Copy = styled.button.attrs({
+  className: 'copyButton',
+})`
   background: ${props => props.theme.colors.grey};
   font-size: 1em;
   font-weight: 500;

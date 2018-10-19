@@ -3,7 +3,7 @@ import React from 'react';
 import { Image, Text } from 'rebass';
 
 const Header = ({ logo }) => (
-  <div>
+  <Text textAlign="center">
     <Image src={logo} width="200px" alt="pottercom" mt={4} />
     <Text
       color="lightBlack"
@@ -14,7 +14,7 @@ const Header = ({ logo }) => (
     >
       Fancy dress for your Intercom
     </Text>
-  </div>
+  </Text>
 );
 
 Header.propTypes = {

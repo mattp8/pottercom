@@ -1,4 +1,4 @@
-# ⚛️ gatsby-starter-modern
+# ⚛️ Pottercom
 
 A modern Gatsby starter with strict linting and auto-formatting rules.
 
