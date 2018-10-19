@@ -21,6 +21,8 @@ class IndexPage extends Component {
     this.onCopySuccess = this.onCopySuccess.bind(this);
   }
 
+  componentDidMount() {}
+
   onCopySuccess() {
     this.setState({ buttonText: 'Copied' });
     setTimeout(() => {
@@ -38,7 +40,7 @@ class IndexPage extends Component {
   render() {
     const { color, buttonText } = this.state;
     const code = `var potterconfig = { color:${color};}
-    <script src=“stackpath.finimize.com/pottercom”  defer=“true”  />`;
+    <script src="https://s6c3d6w9.stackpathcdn.com/wp/wp-content/themes/finimize_new/assets/pottercom/pottercom.js" />`;
 
     return (
       <Layout>
@@ -52,7 +54,7 @@ class IndexPage extends Component {
             flexDirection="column"
             alignItems="flex-start"
           >
-            <Fade bottom cascade delay={800}>
+            <Fade bottom cascade delay={1200}>
               <ChatBubble>
                 <Text color="black" textAlign="left">
                   Hey there. Stuck for costume ideas? Just paste the little
