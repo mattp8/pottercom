@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Clipboard from 'react-clipboard.js';
 import Fade from 'react-reveal/Fade';
 
 import { Flex, Text, Card } from 'rebass';
 
 import Layout from '../components/Layout';
-
 import MascotSrc from '../assets/images/mascot.png';
 import BoltSVG from '../assets/images/bolt';
 
