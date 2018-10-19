@@ -52,7 +52,7 @@ class IndexPage extends Component {
             flexDirection="column"
             alignItems="flex-start"
           >
-            <Fade bottom cascade>
+            <Fade bottom cascade delay={1500}>
               <ChatBubble>
                 <Text color="black" textAlign="left">
                   Hey there. Stuck for costume ideas? Just paste the little
