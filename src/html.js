@@ -24,7 +24,7 @@ export default class HTML extends React.Component {
             }}
           />
 
-          <script src="https://s6c3d6w9.stackpathcdn.com/wp/wp-content/themes/finimize_new/assets/pottercom/pottercom.js" />
+          <script src="http://localhost:8888/wp/wp-content/themes/finimize_new/assets/pottercom/pottercom.js" />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
