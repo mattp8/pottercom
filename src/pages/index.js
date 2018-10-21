@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Clipboard from 'react-clipboard.js';
 import Fade from 'react-reveal/Fade';
+import ReactHowler from 'react-howler';
 
 import { Flex, Text, Card } from 'rebass';
 
 import Layout from '../components/Layout';
 import MascotSrc from '../assets/images/mascot.png';
 import BoltSVG from '../assets/images/bolt';
+import PotterTheme from '../assets/music/pottertheme.mp3';
 
 class IndexPage extends Component {
   constructor() {
@@ -44,6 +46,7 @@ class IndexPage extends Component {
 
     return (
       <Layout>
+        <ReactHowler src={PotterTheme} playing />
         <Flex justifyContent="center" mt={5}>
           <Flex width={[1 / 2]} justifyContent="center">
             <Mascot src={MascotSrc} alt="Pottercom wizard" />
