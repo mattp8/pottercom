@@ -1,14 +1,4 @@
 {
-  "name": "pottercom",
-  "title": "pottercom",
-  "description": "JavaScript library for DOM operations",
-  "version": "3.3.2-pre",
-  "main": "dist/jquery.js",
-  "homepage": "https://jquery.com",
-  "author": {
-    "name": "JS Foundation and other contributors",
-    "url": "https://github.com/jquery/jquery/blob/master/AUTHORS.txt"
-  },
   "private": true,
   "scripts": {
     "build": "gatsby build",
