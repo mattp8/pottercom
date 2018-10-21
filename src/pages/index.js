@@ -40,7 +40,7 @@ class IndexPage extends Component {
   render() {
     const { color, buttonText } = this.state;
     const code = `var potterconfig = { color:${color};}
-    <script src="https://s6c3d6w9.stackpathcdn.com/wp/wp-content/themes/finimize_new/assets/pottercom/pottercom.js" />`;
+    <script src="https://cdn.jsdelivr.net/gh/mattp8/pottercom.js@1.0/src/index.js" />`;
 
     return (
       <Layout>
