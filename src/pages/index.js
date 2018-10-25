@@ -119,12 +119,6 @@ class IndexPage extends Component {
 
 export default IndexPage;
 
-// const CollapseBox = styled(Flex)({
-//   @media all and (max-width: 600px) {
-//     flex-direction: column;
-//   }
-// });
-
 const float = keyframes`
 	0% {
     filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));		transform: translatey(0px);

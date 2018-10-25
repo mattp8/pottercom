@@ -1,17 +1,7 @@
-var checkExist = setInterval(() => {
-  const intercom = document.getElementById('intercom-container');
-
-  if (intercom !== null) {
-    createPotter();
-    observeIntercom();
-    clearInterval(checkExist);
-  }
-}, 100);
-
 // hide bolt overlap
 function hideBolt() {
   const pottercom = document.getElementById('pottercom');
-  pottercom.style.height = '55px';
+  pottercom.style.height = '53px';
 }
 // show the bolt when modal goes
 function showBolt() {
@@ -24,11 +14,14 @@ function observeIntercom() {
   const intercom = document.getElementById('intercom-container');
 
   const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      console.log(mutationga);
-      if (mutation.addedNodes.length === 1) {
+    mutations.forEach(d => {
+      if (
+        d.addedNodes.length === 1 &&
+        d.addedNodes[0].className ===
+          'intercom-messenger-frame intercom-messenger-frame-enter intercom-messenger-frame-enter-active'
+      ) {
         hideBolt();
-      } else if (mutation.removedNodes.length === 1) {
+      } else if (d.removedNodes.length === 1) {
         showBolt();
       }
     });
@@ -44,8 +37,8 @@ function observeIntercom() {
 
 function createPotter() {
   const bolt = `
-  <img src="https://gallery.mailchimp.com/fd92d4d6912bf051aceebbc27/images/8cd89ef2-eaf7-4696-a826-7e8b92c8c293.png" style="width:60px; height:auto; pointer-events:none;" /> 
-  <svg style="position:absolute; top:56px; left:23px; z-index:99999;" width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <img src="https://imgur.com/h69P" style="width:70px; height:auto; pointer-events:none;" /> 
+  <svg style="position:absolute; top:58px; left:28px; z-index:99999;" width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="pottercomBolt" transform="translate(-115.000000, -153.000000)" fill="#000000">
               <g id="Group" transform="translate(95.000000, 99.000000)">
@@ -64,13 +57,13 @@ function createPotter() {
   const div = document.createElement('div');
   div.setAttribute(
     'style',
-    'position:fixed; z-index:99999999999999; bottom:58px; right:15px; height:60px; width:60px; pointer-events:none;',
+    'position:fixed; z-index:99999999999999; bottom:50px; right:10px; height:70px; width:70px; pointer-events:none;',
   );
   const wrapper = document.createElement('div');
   wrapper.setAttribute('id', 'pottercom');
   wrapper.setAttribute(
     'style',
-    'position:relative; z-index:99999999999999; top:0; right:0; overflow:hidden; height:70px; width:60px; pointer-events:none;',
+    'position:relative; z-index:99999999999999; top:0; right:0; overflow:hidden; height:100%; width:70px; pointer-events:none;',
   );
 
   // append elements to body
@@ -79,6 +72,21 @@ function createPotter() {
   wrapper.innerHTML += bolt;
   const potterbolt = document.getElementById('pottercomBolt');
 
-  const boltcolor = potterconfig ? potterconfig.color : '#000';
+  const boltcolor = window.potterconfig ? window.potterconfig.color : '#000';
   potterbolt.setAttribute('style', `fill:${boltcolor}`);
 }
+
+const checkExist = setInterval(() => {
+  let count = 0;
+
+  if (count < 10) {
+    const intercom = document.getElementById('intercom-container');
+
+    if (intercom !== null) {
+      createPotter();
+      observeIntercom();
+      clearInterval(checkExist);
+    }
+    count += 1;
+  }
+}, 100);
