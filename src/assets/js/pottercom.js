@@ -1,12 +1,22 @@
 // hide bolt overlap
 function hideBolt() {
   const potterbolt = document.getElementById('potter-bolt');
+  const potterhat = document.getElementById('potter-hat');
+
+  const windowWidth = window.innerWidth;
   potterbolt.style.display = 'none';
+
+  if (windowWidth < 670) {
+    potterhat.style.display = 'none';
+  }
 }
 // show the bolt when modal goes
 function showBolt() {
   const potterbolt = document.getElementById('potter-bolt');
+  const potterhat = document.getElementById('potter-hat');
+
   potterbolt.style.display = 'block';
+  potterhat.style.display = 'block';
 }
 
 // check to see if the intercom changes to screen mode
@@ -37,7 +47,7 @@ function observeIntercom() {
 
 function createPotter() {
   const bolt = `
-  <img src="https://raw.githubusercontent.com/mattp8/pottercom/master/static/potter-hat.png" style="width:65px; height:auto; pointer-events:none;" /> 
+  <img id="potter-hat" src="https://raw.githubusercontent.com/mattp8/pottercom/master/static/potter-hat.png" style="width:65px; height:auto; pointer-events:none;" /> 
   <svg id="potter-bolt" style="position:absolute; top:58px; left:28px; z-index:99999;" width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="pottercomBolt" transform="translate(-115.000000, -153.000000)" fill="#000000">
