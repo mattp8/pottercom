@@ -191,11 +191,11 @@ const CopyInput = styled.div`
   }
 `;
 
-const noImage = styled`
-display:none;
-width:0;
-height:0;
-z-index:-1;
+const noImage = styled.img`
+  display: none;
+  width: 0;
+  height: 0;
+  z-index: -1;
 `;
 
 const Input = styled.input`
