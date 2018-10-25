@@ -192,10 +192,8 @@ const CopyInput = styled.div`
 `;
 
 const NoImage = styled.img`
-  display: none;
-  width: 0;
-  height: 0;
-  z-index: -1;
+  width: 100px;
+  height: 100px;
 `;
 
 const Input = styled.input`
