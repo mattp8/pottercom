@@ -60,9 +60,9 @@ class IndexPage extends Component {
             <Fade bottom cascade delay={1200}>
               <ChatBubble>
                 <Text color="black" textAlign="left">
-                  <strong>Hey there. Stuck for costume ideas?</strong><br> Paste the little
-                  snippet of code below straight after your Intercom code and watch the
-                  magic happen.{' '}
+                  <strong>Hey there. Stuck for costume ideas?</strong>
+                  <br /> Paste the little snippet of code below straight after
+                  your Intercom code and watch the magic happen.{' '}
                 </Text>
               </ChatBubble>
 
