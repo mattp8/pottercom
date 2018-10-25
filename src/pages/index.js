@@ -10,6 +10,7 @@ import Layout from '../components/Layout';
 import MascotSrc from '../assets/images/mascot.png';
 import BoltSVG from '../assets/images/bolt';
 import PotterTheme from '../assets/music/pottertheme.mp3';
+import PotterHat from '../assets/images/potter-hat.png';
 
 class IndexPage extends Component {
   constructor() {
@@ -112,6 +113,7 @@ class IndexPage extends Component {
             </Fade>
           </Flex>
         </Flex>
+        <noImage src={PotterHat} width="0" />
       </Layout>
     );
   }
@@ -187,6 +189,13 @@ const CopyInput = styled.div`
   @media (max-width: 640px) {
     margin-bottom: 8px;
   }
+`;
+
+const noImage = styled`
+display:none;
+width:0;
+height:0;
+z-index:-1;
 `;
 
 const Input = styled.input`
