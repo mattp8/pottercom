@@ -113,7 +113,6 @@ class IndexPage extends Component {
             </Fade>
           </Flex>
         </Flex>
-        <NoImage src={PotterHat} width="0" alt="hat" />
       </Layout>
     );
   }
@@ -189,11 +188,6 @@ const CopyInput = styled.div`
   @media (max-width: 640px) {
     margin-bottom: 8px;
   }
-`;
-
-const NoImage = styled.img`
-  width: 100px;
-  height: 100px;
 `;
 
 const Input = styled.input`

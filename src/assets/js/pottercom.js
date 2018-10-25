@@ -1,12 +1,12 @@
 // hide bolt overlap
 function hideBolt() {
-  const pottercom = document.getElementById('pottercom');
-  pottercom.style.height = '53px';
+  const potterbolt = document.getElementById('potter-bolt');
+  potterbolt.style.display = 'none';
 }
 // show the bolt when modal goes
 function showBolt() {
-  const pottercom = document.getElementById('pottercom');
-  pottercom.style.height = '70px';
+  const potterbolt = document.getElementById('potter-bolt');
+  potterbolt.style.display = 'block';
 }
 
 // check to see if the intercom changes to screen mode
@@ -37,8 +37,8 @@ function observeIntercom() {
 
 function createPotter() {
   const bolt = `
-  <img src="https://imgur.com/h69P" style="width:70px; height:auto; pointer-events:none;" /> 
-  <svg style="position:absolute; top:58px; left:28px; z-index:99999;" width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <img src="https://raw.githubusercontent.com/mattp8/pottercom/master/static/potter-hat.png" style="width:65px; height:auto; pointer-events:none;" /> 
+  <svg id="potter-bolt" style="position:absolute; top:57px; left:28px; z-index:99999;" width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="pottercomBolt" transform="translate(-115.000000, -153.000000)" fill="#000000">
               <g id="Group" transform="translate(95.000000, 99.000000)">
@@ -57,7 +57,7 @@ function createPotter() {
   const div = document.createElement('div');
   div.setAttribute(
     'style',
-    'position:fixed; z-index:99999999999999; bottom:50px; right:10px; height:70px; width:70px; pointer-events:none;',
+    'position:fixed; z-index:99999999999999; bottom:49px; right:10px; height:70px; width:70px; pointer-events:none;',
   );
   const wrapper = document.createElement('div');
   wrapper.setAttribute('id', 'pottercom');
