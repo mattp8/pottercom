@@ -42,7 +42,7 @@ class IndexPage extends Component {
   render() {
     const { color, buttonText } = this.state;
     const code = `<script>var potterconfig = { color:${color};}</script>
-    <script src="https://cdn.jsdelivr.net/gh/mattp8/pottercom.js@1.1/src/index.js" />`;
+    <script src="https://cdn.jsdelivr.net/gh/mattp8/pottercom.js@1.2/src/index.js" />`;
 
     return (
       <Layout>
@@ -62,7 +62,7 @@ class IndexPage extends Component {
                 <Text color="black" textAlign="left">
                   <strong>Hey there. Stuck for costume ideas?</strong>
                   <br /> Paste the little snippet of code below straight after
-                  your Intercom code and watch the magic happen.{' '}
+                  your Intercom script tags and watch the magic happen.{' '}
                 </Text>
               </ChatBubble>
 
