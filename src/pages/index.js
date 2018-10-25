@@ -10,7 +10,6 @@ import Layout from '../components/Layout';
 import MascotSrc from '../assets/images/mascot.png';
 import BoltSVG from '../assets/images/bolt';
 import PotterTheme from '../assets/music/pottertheme.mp3';
-import PotterHat from '../assets/images/potter-hat.png';
 
 class IndexPage extends Component {
   constructor() {
@@ -61,8 +60,8 @@ class IndexPage extends Component {
             <Fade bottom cascade delay={1200}>
               <ChatBubble>
                 <Text color="black" textAlign="left">
-                  Hey there. Stuck for costume ideas? Just paste the little
-                  snippet of code below, after your Intercom code and watch the
+                  <strong>Hey there. Stuck for costume ideas?</strong><br> Paste the little
+                  snippet of code below straight after your Intercom code and watch the
                   magic happen.{' '}
                 </Text>
               </ChatBubble>
