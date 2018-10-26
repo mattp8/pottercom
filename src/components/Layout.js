@@ -73,16 +73,6 @@ const Layout = ({ children }) => (
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@finimize" />
           <meta name="twitter:creator" content="@finimize" />
-          <meta property="og:url" content="https://pottercom.netlify.com" />
-          <meta
-            property="og:title"
-            content="Pottercom. Fancy dress for your Intercom"
-          />
-          <meta
-            property="og:description"
-            content="Pottercom makes your talkative pal smile! Give him a costume for halloween this year."
-          />
-          <meta property="og:image" content={OGbanner} />
         </Helmet>
 
         <ThemeProvider theme={theme}>
