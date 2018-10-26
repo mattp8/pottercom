@@ -73,7 +73,7 @@ const Layout = ({ children }) => (
           />
           <meta
             property="og:image:secure_url"
-            content="http://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png"
+            content="https://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png"
           />
 
           <meta
