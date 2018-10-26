@@ -88,7 +88,7 @@ const Layout = ({ children }) => (
 
           <meta name="twitter:site" content="@finimize" />
           <meta name="twitter:creator" content="@finimize" />
-          <meta name="twitter:image" content="https://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png">
+          <meta name="twitter:image" content="https://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png" />
 
         </Helmet>
 
