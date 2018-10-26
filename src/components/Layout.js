@@ -55,7 +55,6 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
-          <title>VEED - Create, Edit & Share Videos Online for free</title>
 
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
@@ -68,8 +67,14 @@ const Layout = ({ children }) => (
             property="og:description"
             content="Pottercom makes your talkative pal smile! Give him a costume for halloween this year."
           />
-          <meta property="og:image" content={OGbanner} />
-          <meta property="og:image:url" content={OGbanner} />
+          <meta
+            property="og:image"
+            content="https://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png"
+          />
+          <meta
+            property="og:image:url"
+            content="https://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png"
+          />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@finimize" />
           <meta name="twitter:creator" content="@finimize" />
