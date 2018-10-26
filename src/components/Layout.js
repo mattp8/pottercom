@@ -9,6 +9,7 @@ import Header from './Header';
 import Footer from './Footer';
 import theme from '../theme';
 import Pottercom from '../assets/images/pottercom.svg';
+import OGbanner from '../assets/images/pottercom-og.png';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -54,6 +55,34 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
+          <title>VEED - Create, Edit & Share Videos Online for free</title>
+
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:url" content="https://pottercom.netlify.com" />
+          <meta
+            property="og:title"
+            content="Pottercom. Fancy dress for your Intercom"
+          />
+          <meta
+            property="og:description"
+            content="Pottercom makes your talkative pal smile! Give him a costume for halloween this year."
+          />
+          <meta property="og:image" content={OGbanner} />
+          <meta property="og:image:url" content={OGbanner} />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@finimize" />
+          <meta name="twitter:creator" content="@finimize" />
+          <meta property="og:url" content="https://pottercom.netlify.com" />
+          <meta
+            property="og:title"
+            content="Pottercom. Fancy dress for your Intercom"
+          />
+          <meta
+            property="og:description"
+            content="Pottercom makes your talkative pal smile! Give him a costume for halloween this year."
+          />
+          <meta property="og:image" content={OGbanner} />
         </Helmet>
 
         <ThemeProvider theme={theme}>
