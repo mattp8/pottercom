@@ -72,6 +72,11 @@ const Layout = ({ children }) => (
             content="Pottercom makes your talkative pal smile! Give him a costume for halloween this year."
           />
           <meta
+            property="og:image:secure_url"
+            content="http://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png"
+          />
+
+          <meta
             property="og:image"
             content="http://pottercom.netlify.com/182d04844b9ce22a4e3ad7f1b6512d56.png"
           />
