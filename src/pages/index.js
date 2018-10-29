@@ -52,7 +52,7 @@ class IndexPage extends Component {
             <Mascot src={MascotSrc} alt="Pottercom wizard" />
           </Flex>
           <Flex
-            width={[1 / 2]}
+            width={[1 / 2, 1]}
             justifyContent="flex-start"
             flexDirection="column"
             alignItems="flex-start"

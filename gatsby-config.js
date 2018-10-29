@@ -12,5 +12,14 @@ module.exports = {
         logo: './src/assets/images/favicon.png',
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-55650732-8',
+        // Puts tracking script in the head instead of the body
+        head: false,
+        cookieDomain: 'pottercom.com',
+      },
+    },
   ],
 };
