@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="443px" height="443px" viewBox="0 0 443 443" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-3.000000, -4.000000)">
+            <g id="Group" transform="translate(7.000000, 8.000000)">
+                <circle id="Oval" stroke="#F8F8F8" stroke-width="7" fill-rule="nonzero" cx="217.5" cy="217.5" r="217.5"></circle>
+                <text id="7" font-family="Pistilli" font-size="300" font-weight="normal" fill="#F8F8F8">
+                    <tspan x="59" y="315">7</tspan>
+                </text>
+                <text id="4" font-family="Pistilli" font-size="120" font-weight="normal" fill="#F8F8F8">
+                    <tspan x="267" y="180">4</tspan>
+                </text>
+                <text id="9" font-family="Pistilli" font-size="120" font-weight="normal" fill="#F8F8F8">
+                    <tspan x="267" y="311">9</tspan>
+                </text>
+                <path d="M243.5,204 L370.101562,204" id="Line" stroke="#F8F8F8" stroke-width="5" stroke-linecap="square" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
