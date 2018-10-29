@@ -47,12 +47,12 @@ class IndexPage extends Component {
     return (
       <Layout>
         <ReactHowler src={PotterTheme} playing />
-        <Flex justifyContent="center" mt={5}>
+        <Flex justifyContent="center" flexWrap="wrap" mt={5}>
           <Flex width={[1 / 2]} justifyContent="center">
             <Mascot src={MascotSrc} alt="Pottercom wizard" />
           </Flex>
-          <Flex
-            width={[1 / 2, 1]}
+          <StyledContainer
+            width={[1, 1 / 2, 1 / 2]}
             justifyContent="flex-start"
             flexDirection="column"
             alignItems="flex-start"
@@ -110,7 +110,7 @@ class IndexPage extends Component {
                 </Flex>
               </Flex>
             </Fade>
-          </Flex>
+          </StyledContainer>
         </Flex>
       </Layout>
     );
@@ -224,5 +224,12 @@ const Copy = styled.button.attrs({
   active {
     outline: none;
     border: none;
+  }
+`;
+
+const StyledContainer = styled(Flex)`
+  @media all and (max-width: 480px) {
+    position: relative;
+    top: -250px;
   }
 `;

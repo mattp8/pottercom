@@ -20,13 +20,13 @@ const Footer = ({ children, ...props }) => (
       </span>
       by <Link href="https://www.finimize.com?ref=pottercom">Finimize</Link>
     </Text>
-    <Text mt="4px" color="#C0CCDA" fontSize={0}>
+    <StyledText mt="4px" color="#C0CCDA" fontSize={0}>
       We use{' '}
       <Link small href="https://www.finimize.com/wp/privacy-policy/">
         cookies
       </Link>{' '}
       & pumpkin pasties to make our Pottercom work
-    </Text>
+    </StyledText>
   </Flex>
 );
 
@@ -40,5 +40,14 @@ const Link = styled.a`
 
   :hover {
     color: #00b2ff;
+  }
+`;
+
+const StyledText = styled(Text)`
+  @media all and (max-width: 600px) {
+    max-width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 8px;
   }
 `;
