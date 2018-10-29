@@ -54,7 +54,8 @@ const Layout = ({ children }) => (
             },
           ]}
         >
-          <link rel="canonical" href="https://pottercom.netlify.com/home" />
+          <link rel="canonical" href="https://pottercom.com" />
+          <link rel="canonical" href="https://www.pottercom.com" />
           <html lang="en" />
           <meta property="og:locale" content="en_GB" />
           <meta property="og:site_name" content="Pottercom" />
@@ -62,7 +63,7 @@ const Layout = ({ children }) => (
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:url" content="https://pottercom.netlify.com" />
+          <meta property="og:url" content="https://www.pottercom.com" />
           <meta
             property="og:title"
             content="Pottercom. Fancy dress for your Intercom"
